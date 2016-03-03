@@ -180,6 +180,16 @@ class Cfg3DEN
 						defaultValue	= "[ ""marker01"", ""marker02"", ""marker03"" ]";
 					};
 					
+					class infGroup
+					{
+						displayName		= "Infantry Group"; 
+						tooltip			= "Is this groub a infantry group, or has it a fighting vehicle that should not be left behind."; 
+						property		= "T8U_introduce_infGroup"; 
+						control			= "Checkbox";
+						expression		= "_this setVariable [ 'T8U_introduce_infGroup', _value ];";
+						defaultValue	= "true";
+					};
+					
 					class commShare
 					{
 						displayName		= "Communication: Share"; 
@@ -210,20 +220,20 @@ class Cfg3DEN
 						defaultValue	= "true";
 					};
 					
-					class infGroup
+					class EXECfunction
 					{
-						displayName		= "Infantry Group"; 
-						tooltip			= "Is this groub a infantry group, or has it a fighting vehicle that should not be left behind."; 
-						property		= "T8U_introduce_infGroup"; 
+						displayName		= "EXEC Function (optional)"; 
+						tooltip			= "Is this is enabled the defined custom function will be executed after the group is introduced to the T8 Units script (same as the function which is executed on spawn)."; 
+						property		= "T8U_introduce_EXECfunction"; 
 						control			= "Checkbox";
-						expression		= "_this setVariable [ 'T8U_introduce_infGroup', _value ];";
-						defaultValue	= "true";
+						expression		= "_this setVariable [ 'T8U_introduce_EXECfunction', _value ];";
+						defaultValue	= "false";
 					};
 					
 					class customFunction
 					{
-						displayName		= "Custom Function (optional)"; 
-						tooltip			= "Custom function to execute after inroduction to T8 Units (same as the function which is executed on spawn)."; 
+						displayName		= "Function (optional)"; 
+						tooltip			= "Custom function to execute after inroduction to T8 Units."; 
 						property		= "T8U_introduce_function"; 
 						control			= "Edit";
 						expression		= "_this setVariable [ 'T8U_introduce_function', _value ];";
@@ -248,16 +258,6 @@ class Cfg3DEN
 						unique			= 0;
 						validate		= "none";
 						typeName		= "NUMBER";
-					};
-					
-					class patrolMarkerArray
-					{
-						displayName		= "Patrol Marker Array (optional)"; 
-						tooltip			= "ONLY for PATROL_MARKER! Markers that will be patroled (the center positions, not area)."; 
-						property		= "T8U_introduce_patrolMarkerArray"; 
-						control			= "EditArray";
-						expression		= "_this setVariable [ 'T8U_introduce_patrolMarkerArray', _value ];";
-						defaultValue	= "[ ""marker01"", ""marker02"", ""marker03"" ]";
 					};
 
 					class patrolMarkerSAD
