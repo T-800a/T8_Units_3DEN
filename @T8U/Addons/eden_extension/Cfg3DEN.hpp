@@ -44,22 +44,85 @@ class Cfg3DEN
 					{
 						class item00
 						{
-							text = "- select a task -";
+							text = "- SELECT A TASK -";
 							data = "ERROR";
 							default = 1;
 						};
 						
 						class item01
 						{
-							text		= "patrol";
+							text		= "PATROL";
 							data		= "PATROL";
 							tooltip		= "";
 						};
 						
 						class item02
 						{
-							text		= "patrol around";
+							text		= "PATROL AROUND";
 							data		= "PATROL_AROUND";
+							tooltip		= "";
+						};
+						
+						class item03
+						{
+							text		= "PATROL GARRISON";
+							data		= "PATROL_GARRISON";
+							tooltip		= "";
+						};
+						
+						class item04
+						{
+							text		= "PATROL MARKER";
+							data		= "PATROL_MARKER";
+							tooltip		= "";
+						};
+						
+						class item05
+						{
+							text		= "PATROL URBAN";
+							data		= "PATROL_URBAN";
+							tooltip		= "";
+						};
+						
+						class item06
+						{
+							text		= "GARRISON";
+							data		= "GARRISON";
+							tooltip		= "";
+						};
+						
+						class item07
+						{
+							text		= "OCCUPY";
+							data		= "OCCUPY";
+							tooltip		= "";
+						};
+						
+						class item08
+						{
+							text		= "DEFEND";
+							data		= "DEFEND";
+							tooltip		= "";
+						};
+						
+						class item09
+						{
+							text		= "DEFEND_BASE";
+							data		= "DEFEND_BASE";
+							tooltip		= "";
+						};
+						
+						class item10
+						{
+							text		= "OVERWATCH";
+							data		= "OVERWATCH";
+							tooltip		= "";
+						};
+						
+						class item11
+						{
+							text		= "ATTACK";
+							data		= "ATTACK";
 							tooltip		= "";
 						};
 					};
@@ -110,7 +173,7 @@ class Cfg3DEN
 					class markerArray
 					{
 						displayName		= "Marker"; 
-						tooltip			= "The marker area(s) where the group should do the selected task in."; 
+						tooltip			= "The marker(s) where the group should do the selected task. Seperate multiple markers with a comma."; 
 						property		= "T8U_introduce_markerArray"; 
 						control			= "EditArray";
 						expression		= "_this setVariable [ 'T8U_introduce_markerArray', _value ];";
@@ -159,7 +222,7 @@ class Cfg3DEN
 					
 					class customFunction
 					{
-						displayName		= "Custom Function"; 
+						displayName		= "Custom Function (optional)"; 
 						tooltip			= "Custom function to execute after inroduction to T8 Units (same as the function which is executed on spawn)."; 
 						property		= "T8U_introduce_function"; 
 						control			= "Edit";
@@ -170,6 +233,81 @@ class Cfg3DEN
 						unique			= 0;
 						validate		= "none";
 						typeName		= "STRING";
+					};
+					
+					class patrolAroundDistance
+					{
+						displayName		= "Patrol Around Distance (optional)"; 
+						tooltip			= "ONLY for PATROL_AROUND! Zone radius + patrol around distance (e.g. 50 m) is the distance where units will patrol around zones."; 
+						property		= "T8U_introduce_patrolAroundDis"; 
+						control			= "EditShort";
+						expression		= "_this setVariable [ 'T8U_introduce_patrolAroundDis', _value ];";
+						defaultValue	= 50;
+						
+				// Optional properties
+						unique			= 0;
+						validate		= "none";
+						typeName		= "NUMBER";
+					};
+					
+					class patrolMarkerArray
+					{
+						displayName		= "Patrol Marker Array (optional)"; 
+						tooltip			= "ONLY for PATROL_MARKER! Markers that will be patroled (the center positions, not area)."; 
+						property		= "T8U_introduce_patrolMarkerArray"; 
+						control			= "EditArray";
+						expression		= "_this setVariable [ 'T8U_introduce_patrolMarkerArray', _value ];";
+						defaultValue	= "[ ""marker01"", ""marker02"", ""marker03"" ]";
+					};
+
+					class patrolMarkerSAD
+					{
+						displayName		= "Patrol Marker SaD Waypoints (optional)"; 
+						tooltip			= "ONLY for PATROL_MARKER! The group will perfrom a SaD Waypoint on eacht patrol marker."; 
+						property		= "T8U_introduce_patrolMarkerSAD"; 
+						control			= "Checkbox";
+						expression		= "_this setVariable [ 'T8U_introduce_patrolMarkerSAD', _value ];";
+						defaultValue	= "false";
+					};
+					
+					class occupyImmobile
+					{
+						displayName		= "Occcupy Immobile (optional)"; 
+						tooltip			= "ONLY for OCCUPY! The group is immobile on their building positions."; 
+						property		= "T8U_introduce_occupyImmobile"; 
+						control			= "Checkbox";
+						expression		= "_this setVariable [ 'T8U_introduce_occupyImmobile', _value ];";
+						defaultValue	= "false";
+					};
+					
+					class overwatchMinDis
+					{
+						displayName		= "Overwatch Minimum Distance (optional)"; 
+						tooltip			= "ONLY for OVERWATCH! The minimum distance from the overatch marker to search for overwatch positions."; 
+						property		= "T8U_introduce_overwatchMinDis"; 
+						control			= "EditShort";
+						expression		= "_this setVariable [ 'T8U_introduce_overwatchMinDis', _value ];";
+						defaultValue	= 250;
+						
+				// Optional properties
+						unique			= 0;
+						validate		= "none";
+						typeName		= "NUMBER";
+					};
+					
+					class overwatchRange
+					{
+						displayName		= "Overwatch Range (optional)"; 
+						tooltip			= "ONLY for OVERWATCH! The width of the ring, in which to search for Overwatch positions."; 
+						property		= "T8U_introduce_overwatchRange"; 
+						control			= "EditShort";
+						expression		= "_this setVariable [ 'T8U_introduce_overwatchRange', _value ];";
+						defaultValue	= 200;
+						
+				// Optional properties
+						unique			= 0;
+						validate		= "none";
+						typeName		= "NUMBER";
 					};
 				};
 			};
