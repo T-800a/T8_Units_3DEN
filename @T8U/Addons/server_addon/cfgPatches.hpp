@@ -1,7 +1,7 @@
 /*
  =======================================================================================================================
 
-	T8 Units: 3DEN Extension
+	T8 Units: Server Addon
 
 	File:		CfgPatches.cpp
 	Author:		T-800a
@@ -12,13 +12,13 @@
 
 class CfgPatches 
 {
-	class T8U_eden_extension
+	class T8U_server_addon
 	{
-		name				= "eden_extension.pbo";
+		name				= "server_addon.pbo";
 		mail				= "T-800a@gmx.net";
 		author[]			= { "T-800a" };
 
-		requiredaddons[]	= { "3DEN", "T8U_server_addon" };
+		requiredaddons[]	= {};
 		requiredversion		= 0.1;
 		units[]				= {};
 		weapons[]			= {};

@@ -247,8 +247,8 @@ class Cfg3DEN
 					
 					class patrolAroundDistance
 					{
-						displayName		= "Patrol Around Distance (optional)"; 
-						tooltip			= "ONLY for PATROL_AROUND! Zone radius + patrol around distance (e.g. 50 m) is the distance where units will patrol around zones."; 
+						displayName		= "Patrol Around Range (optional)"; 
+						tooltip			= "ONLY for PATROL_AROUND! Zone radius + patrol around range (e.g. 50 m) is the distance at which units will patrol around zones."; 
 						property		= "T8U_introduce_patrolAroundDis"; 
 						control			= "EditShort";
 						expression		= "_this setVariable [ 'T8U_introduce_patrolAroundDis', _value ];";
@@ -262,7 +262,7 @@ class Cfg3DEN
 
 					class patrolMarkerSAD
 					{
-						displayName		= "Patrol Marker SaD Waypoints (optional)"; 
+						displayName		= "Patrol Marker SaD WP (optional)"; 
 						tooltip			= "ONLY for PATROL_MARKER! The group will perfrom a SaD Waypoint on eacht patrol marker."; 
 						property		= "T8U_introduce_patrolMarkerSAD"; 
 						control			= "Checkbox";
@@ -282,7 +282,7 @@ class Cfg3DEN
 					
 					class overwatchMinDis
 					{
-						displayName		= "Overwatch Minimum Distance (optional)"; 
+						displayName		= "Overwatch min. Distnace (optional)"; 
 						tooltip			= "ONLY for OVERWATCH! The minimum distance from the overatch marker to search for overwatch positions."; 
 						property		= "T8U_introduce_overwatchMinDis"; 
 						control			= "EditShort";
