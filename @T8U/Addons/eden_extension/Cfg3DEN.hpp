@@ -151,7 +151,7 @@ class Cfg3DEN
 						tooltip			= "Introduce the selected group to the T8 Units Script"; 
 						property		= "T8U_introduce"; 
 						control			= "Checkbox";
-						expression		= "if ( !is3DEN AND !isNil 'T8U_fnc_introduce' ) then {[ _value, _this ] spawn { waitUntil { time > 5 }; if ( _this select 0 ) then {( _this select 1 ) spawn T8U_fnc_introduce; };};};";
+						expression		= "if ( !is3DEN AND !isNil 'T8U_fnc_introduce' ) then { _this setVariable [ 'T8U_gvar_introduce', true ]; [ _value, _this ] spawn { waitUntil { time > 5 }; if ( _this select 0 ) then {( _this select 1 ) spawn T8U_fnc_introduce; };};};";
 						defaultValue	= "false";
 					};
 					

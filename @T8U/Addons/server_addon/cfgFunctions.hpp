@@ -32,13 +32,14 @@ class cfgFunctions
 			file = "T8U\server_addon\T8\fnc";
 			
 			addFunctionPost(INIT);
-			
+
 			addFunction(assignTask);
 			addFunction(cache);
 			addFunction(checkEXEC);
 			addFunction(combatBehaviorMod);
 			addFunction(createFlankingPos);
 			addFunction(createSpawnPos);
+			addFunction(createUnitContainer);
 			addFunction(createWaypoint);
 			addFunction(createWaypointPositions);
 			addFunction(debugLog);
@@ -62,10 +63,12 @@ class cfgFunctions
 			addFunction(groupClearWaypoints);
 			addFunction(groupCopyVars);
 			addFunction(groupRegroup);
+			addFunction(handleGroups);
 			addFunction(hitEvent);
 			addFunction(inBuilding);
 			addFunction(introduce);
-			addFunction(killedEvent);
+		//	addFunction(killedEvent);		// no longer needed
+			addFunction(loadConfig);
 			addFunction(moveOut);
 			addFunction(moveTo);
 			addFunction(moveToPos);
@@ -77,6 +80,7 @@ class cfgFunctions
 			addFunction(releaseGroup);
 			addFunction(resetCalled);
 			addFunction(restartFiredEvent);
+			addFunction(selectConfigFile);
 			addFunction(smokeScreen);
 			addFunction(spawn);
 			addFunction(track);
@@ -85,7 +89,9 @@ class cfgFunctions
 			addFunction(zone);
 			addFunction(zoneCreate);
 			addFunction(zoneNotAktiv);
+			addFunction(teleportGroupToCurrentWaypoint);
 			
+
 			// polygon stuff
 			addFunction(getPolygon);
 			addFunction(drawPolygon);
