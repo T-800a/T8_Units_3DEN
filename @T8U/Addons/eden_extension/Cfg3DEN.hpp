@@ -193,7 +193,7 @@ class Cfg3DEN
 					class commShare
 					{
 						displayName		= "Communication: Share"; 
-						tooltip			= "The group will share information about enemies with other groups."; 
+						tooltip			= "The group will share information about enemies with other groups and will call other T8U groups (xor DAC groups) for help if not in superiority."; 
 						property		= "T8U_introduce_comm_share"; 
 						control			= "Checkbox";
 						expression		= "_this setVariable [ 'T8U_introduce_comm_share', _value ];";
@@ -202,8 +202,8 @@ class Cfg3DEN
 					
 					class commCall
 					{
-						displayName		= "Communication: Call"; 
-						tooltip			= "The group will call other T8U groups (xor DAC groups) for help if not in superiority."; 
+						displayName		= "Communication: React"; 
+						tooltip			= "The group will respond to support calls of other groups."; 
 						property		= "T8U_introduce_comm_call"; 
 						control			= "Checkbox";
 						expression		= "_this setVariable [ 'T8U_introduce_comm_call', _value ];";
@@ -212,7 +212,7 @@ class Cfg3DEN
 					
 					class commReact
 					{
-						displayName		= "Communication: React"; 
+						displayName		= "Communication: Defensive"; 
 						tooltip			= "The group is allowed to react to threats even when they are on a assist mission (e.g. hold position if attacked and not in superiority)."; 
 						property		= "T8U_introduce_comm_react"; 
 						control			= "Checkbox";
