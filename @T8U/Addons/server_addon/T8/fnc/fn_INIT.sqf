@@ -16,7 +16,7 @@
 #include <..\MACRO.hpp>
 
 
-// cancel double execution
+// cancel double execution (if script and addon present)
 if ( !isNil "T8U_var_INIT" ) exitWith {};
 T8U_var_INIT = true;
 
@@ -45,10 +45,6 @@ if ( T8U_var_DEBUG ) then
 
 // start our group handling / communication management
 [] spawn T8U_fnc_handleGroups;
-
-
-// clear empty groups every 30 seconds (ignores DAC owned groups)
-[] spawn T8U_fnc_GroupClearEmpty;
 
 
 // we are good to go!

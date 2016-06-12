@@ -21,16 +21,16 @@ class cfgFunctions
 	{
 		class client
 		{
-			file = "T8U\server_addon\T8\fnc";
-			
+			file = "T8\fnc";
+
 			addFunction(hint);
 			addFunction(broadcastHint);
 		};
-		
+
 		class server
 		{
-			file = "T8U\server_addon\T8\fnc";
-			
+			file = "T8\fnc";
+
 			addFunctionPost(INIT);
 
 			addFunction(assignTask);
@@ -59,7 +59,7 @@ class cfgFunctions
 			addFunction(getOutCover);
 			addFunction(getOutVehicle);
 			addFunction(getSupport);
-			addFunction(groupClearEmpty);
+		//	addFunction(groupClearEmpty);		// no longer needed
 			addFunction(groupClearWaypoints);
 			addFunction(groupCopyVars);
 			addFunction(groupRegroup);
@@ -67,7 +67,7 @@ class cfgFunctions
 			addFunction(hitEvent);
 			addFunction(inBuilding);
 			addFunction(introduce);
-		//	addFunction(killedEvent);		// no longer needed
+		//	addFunction(killedEvent);			// no longer needed
 			addFunction(loadConfig);
 			addFunction(moveOut);
 			addFunction(moveTo);
@@ -101,13 +101,13 @@ class cfgFunctions
 			addFunction(checkOutside);
 		};
 	};
-	
+
 	class T8U_tsk
 	{
 		class task
 		{
-			file = "T8U\server_addon\T8\tsk";
-			
+			file = "T8\tsk";
+
 			// basic tasks
 			addFunction(attack);
 			addFunction(defend);
@@ -131,12 +131,11 @@ class cfgFunctions
 	{
 		class support
 		{
-			file = "T8U\server_addon\T8\sup";
+			file = "T8\sup";
 
 			addFunction(HALO);
 		};
 	};
-
 
 };
 	
