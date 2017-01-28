@@ -14,14 +14,14 @@
 #define addFunctionPre(fncName)		class fncName { headerType = -1; preInit = 1; }
 #define addFunctionPost(fncName)	class fncName { headerType = -1; postInit = 1; }
 
+
 class cfgFunctions
 {
-
 	class T8U
 	{
 		class client
 		{
-			file = "T8\fnc";
+			file = "\T8U\server_addon\T8\fnc";
 
 			addFunction(hint);
 			addFunction(broadcastHint);
@@ -29,7 +29,7 @@ class cfgFunctions
 
 		class server
 		{
-			file = "T8\fnc";
+			file = "\T8U\server_addon\T8\fnc";
 
 			addFunctionPost(INIT);
 
@@ -106,7 +106,7 @@ class cfgFunctions
 	{
 		class task
 		{
-			file = "T8\tsk";
+			file = "\T8U\server_addon\T8\tsk";
 
 			// basic tasks
 			addFunction(attack);
@@ -131,11 +131,9 @@ class cfgFunctions
 	{
 		class support
 		{
-			file = "T8\sup";
+			file = "\T8U\server_addon\T8\sup";
 
 			addFunction(HALO);
 		};
 	};
-
 };
-	
